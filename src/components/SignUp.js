@@ -1,22 +1,34 @@
 import React, { useState } from 'react';
+import { useHistory, Link } from 'react-router-dom';
+import Cookies from 'universal-cookie';
 import { signUp } from '../requests/api';
 
 const SignUp = () => {
   const [username, setUsername] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const cookies = new Cookies();
+  const history = useHistory();
 
   const createUser = async () => {
-    const confirmation = await signUp(username);
+    const response = await signUp(username);
+    const data = await response.json();
 
-    if (confirmation) {
-      console.log('User created');
+    if (response.ok) {
+      cookies.set('currentUser', data.user, { path: '/' });
+      cookies.set('userToken', data.token, { path: '/' });
+      history.push('/games');
     } else {
-      console.log('Username already taken');
+      cookies.remove('currentUser');
+      cookies.remove('token');
+      setErrorMessage(`Username ${data.username[0]}`);
     }
   };
 
   return (
     <>
       <h1>Sign Up</h1>
+      <p>{errorMessage}</p>
       <form>
         <input
           type="text"
@@ -32,6 +44,14 @@ const SignUp = () => {
           Create Account
         </button>
       </form>
+
+      <p>
+        Already have an account?
+        {' '}
+        <Link to="/login">
+          Log In
+        </Link>
+      </p>
     </>
   );
 };

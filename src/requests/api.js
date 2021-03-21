@@ -24,18 +24,18 @@ const gameInfo = async id => {
 };
 
 const signUp = async username => {
-  const options = {
-    method: 'POST',
-    mode: 'cors',
-  };
+  try {
+    const options = {
+      method: 'POST',
+      mode: 'cors',
+    };
 
-  const response = await fetch(`${URL}/users?username=${username}`, options);
+    const response = await fetch(`${URL}/users?username=${username}`, options);
 
-  if (response.ok) {
-    return true;
+    return response;
+  } catch {
+    return false;
   }
-
-  return false;
 };
 
 const user = async id => {
