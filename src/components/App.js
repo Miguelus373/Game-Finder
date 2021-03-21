@@ -1,21 +1,14 @@
 import '../assets/App.css';
+import { Switch, Route } from 'react-router-dom';
+import SignUp from './SignUp';
 
 function App() {
   return (
-    <>
-      <div className="App">
-        <header className="App-header">
-          <a
-            className="App-link"
-            href="https://gamefinderapi.herokuapp.com/games"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Games in Backend API
-        </a>
-        </header>
-      </div>
-    </>
+    <div className="App">
+      <Switch>
+        <Route path="/signup" component={SignUp} />
+      </Switch>
+    </div>
   );
 }
 
