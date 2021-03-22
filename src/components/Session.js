@@ -17,7 +17,7 @@ const Session = () => {
     const data = await response.json();
 
     if (response.ok) {
-      cookies.set('currentUser', data.username, { path: '/' });
+      cookies.set('currentUserID', data.user_id, { path: '/' });
       cookies.set('userToken', data.token, { path: '/' });
       history.push('/games');
     } else {
