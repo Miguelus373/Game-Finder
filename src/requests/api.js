@@ -23,14 +23,14 @@ const gameInfo = async id => {
   }
 };
 
-const signUp = async username => {
+const session = async (username, path) => {
   try {
     const options = {
       method: 'POST',
       mode: 'cors',
     };
 
-    const response = await fetch(`${URL}/users?username=${username}`, options);
+    const response = await fetch(`${URL}${path}?username=${username}`, options);
 
     return response;
   } catch {
@@ -79,5 +79,5 @@ const removeFromFavourites = async favID => {
 };
 
 export {
-  games, gameInfo, signUp, user, addToFavourites, removeFromFavourites,
+  games, gameInfo, session, user, addToFavourites, removeFromFavourites,
 };
