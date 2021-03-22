@@ -1,6 +1,6 @@
-const getGames = games => ({
-  type: 'GET_GAMES',
+const setGames = games => ({
+  type: 'SET_GAMES',
   payload: games,
 });
 
-export default getGames;
+export default setGames;
