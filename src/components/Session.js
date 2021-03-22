@@ -19,7 +19,7 @@ const Session = () => {
     if (response.ok) {
       cookies.set('currentUserID', data.user_id, { path: '/' });
       cookies.set('userToken', data.token, { path: '/' });
-      history.push('/games');
+      history.push('/menu');
     } else {
       cookies.remove('currentUser');
       cookies.remove('token');

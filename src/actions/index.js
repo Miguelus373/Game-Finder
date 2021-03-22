@@ -3,4 +3,9 @@ const setGames = games => ({
   payload: games,
 });
 
-export default setGames;
+const setUser = user => ({
+  type: 'SET_USER',
+  payload: user,
+});
+
+export { setGames, setUser };

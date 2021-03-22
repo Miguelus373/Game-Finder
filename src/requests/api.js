@@ -38,9 +38,17 @@ const session = async (username, path) => {
   }
 };
 
-const user = async id => {
+const user = async (id, token) => {
   try {
-    const response = await fetch(`${URL}/users/${id}`);
+    const OPTIONS = {
+      method: 'GET',
+      mode: 'cors',
+      headers: {
+        Authorization: `Basic ${token}`,
+      },
+    };
+
+    const response = await fetch(`${URL}/users/${id}`, OPTIONS);
     const user = await response.json();
 
     return user;
