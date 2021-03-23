@@ -13,7 +13,7 @@ function App() {
         <Route path={['/signup', '/login']} component={Session} />
         <Route path="/menu" component={Menu} />
         <Route path="/game/" component={GameDetails} />
-        <Route exact path="/games" component={GamesIndex} />
+        <Route path={['/games', '/favourites']} component={GamesIndex} />
         <Route exact path="/" component={MainPage} />
       </Switch>
     </div>
