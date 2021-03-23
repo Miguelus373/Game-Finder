@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const Navbar = ({ title, path, backArrow }) => {
+const Navbar = ({ title, backArrow }) => {
   const history = useHistory();
 
   return (
@@ -16,7 +16,7 @@ const Navbar = ({ title, path, backArrow }) => {
       <h3>
         {title}
       </h3>
-      <Link to={path}>
+      <Link to="/menu">
         Menu
       </Link>
     </nav>
@@ -26,7 +26,6 @@ const Navbar = ({ title, path, backArrow }) => {
 Navbar.propTypes = {
   backArrow: PropTypes.bool,
   title: PropTypes.string.isRequired,
-  path: PropTypes.string.isRequired,
 };
 
 Navbar.defaultProps = {

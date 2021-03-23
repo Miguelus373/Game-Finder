@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
 import GameCard from '../components/GameCard';
 import * as API from '../requests/api';
 import { setGames } from '../actions/index';
@@ -20,11 +19,9 @@ const GamesIndex = () => {
   if (games.length) {
     return (
       <>
-        <Navbar title="Games" path="/menu" />
+        <Navbar title="Games" />
         {games.map(game => (
-          <Link to={`/games/${game.id}`} key={game.id}>
-            <GameCard game={game} />
-          </Link>
+          <GameCard game={game} key={game.id} />
         ))}
       </>
     );
