@@ -4,13 +4,15 @@ import Cookies from 'universal-cookie';
 import { session } from '../requests/api';
 
 const Session = () => {
+  const cookies = new Cookies();
+  const history = useHistory();
+
+  if (cookies.get('currentUserID')) { history.push('/menu'); }
+
   const { pathname } = useLocation();
 
   const [username, setUsername] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-
-  const cookies = new Cookies();
-  const history = useHistory();
 
   const createSession = async () => {
     const response = await session(username, pathname);

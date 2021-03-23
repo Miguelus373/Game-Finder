@@ -6,16 +6,17 @@ import { setUser } from '../actions';
 import * as API from '../requests/api';
 
 const Menu = () => {
-  const user = useSelector(state => state.user.info);
-  const dispatch = useDispatch();
   const cookies = new Cookies();
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const logout = () => {
     cookies.remove('currentUserID');
     cookies.remove('userToken');
     history.push('/');
   };
+
+  if (!cookies.get('currentUserID')) { logout(); return false; }
 
   useEffect(() => {
     const { currentUserID, userToken } = cookies.getAll();
@@ -25,6 +26,8 @@ const Menu = () => {
         dispatch(setUser(user));
       });
   }, []);
+
+  const user = useSelector(state => state.user.info);
 
   if (user) {
     return (
@@ -48,6 +51,7 @@ const Menu = () => {
       </>
     );
   }
+
   return (<h2>Loading</h2>);
 };
 
