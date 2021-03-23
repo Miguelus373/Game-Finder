@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { useHistory, Link, useLocation } from 'react-router-dom';
 import Cookies from 'universal-cookie';
-import { session } from '../requests/api';
+import { session } from '../helpers/api';
+import { loggedIn } from '../helpers/session';
 
 const Session = () => {
   const cookies = new Cookies();
   const history = useHistory();
 
-  if (cookies.get('currentUserID')) { history.push('/menu'); }
+  if (loggedIn()) { history.push('/menu'); return false; }
 
   const { pathname } = useLocation();
 
@@ -23,8 +24,6 @@ const Session = () => {
       cookies.set('userToken', data.token, { path: '/' });
       history.push('/menu');
     } else {
-      cookies.remove('currentUser');
-      cookies.remove('token');
       setErrorMessage(`Username ${data.username}`);
     }
   };

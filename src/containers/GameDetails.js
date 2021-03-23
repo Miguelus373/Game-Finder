@@ -1,13 +1,16 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Navbar from '../components/Navbar';
+import { loggedIn } from '../helpers/session';
 
 const GameDetails = () => {
+  const history = useHistory();
   const { pathname } = useLocation();
   const id = parseInt(pathname.split('/')[2], 10);
-
   const game = useSelector(state => state.games.find(game => game.id === id));
+
+  if (!loggedIn() || !game) { history.push('/'); return false; }
 
   const {
     title, image, description, genre,

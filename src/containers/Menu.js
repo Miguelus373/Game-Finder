@@ -3,29 +3,30 @@ import { useSelector, useDispatch } from 'react-redux';
 import Cookies from 'universal-cookie';
 import { Link, useHistory } from 'react-router-dom';
 import { setUser } from '../actions';
-import * as API from '../requests/api';
+import * as API from '../helpers/api';
+import { loggedIn, currentUserId, userToken } from '../helpers/session';
 
 const Menu = () => {
   const cookies = new Cookies();
   const history = useHistory();
   const dispatch = useDispatch();
 
+  if (!loggedIn()) { history.push('/'); return false; }
+
+  useEffect(() => {
+    const [userID, token] = [currentUserId(), userToken()];
+
+    API.user(userID, token)
+      .then(user => {
+        dispatch(setUser(user));
+      });
+  }, []);
+
   const logout = () => {
     cookies.remove('currentUserID');
     cookies.remove('userToken');
     history.push('/');
   };
-
-  if (!cookies.get('currentUserID')) { logout(); return false; }
-
-  useEffect(() => {
-    const { currentUserID, userToken } = cookies.getAll();
-
-    API.user(currentUserID, userToken)
-      .then(user => {
-        dispatch(setUser(user));
-      });
-  }, []);
 
   const user = useSelector(state => state.user.info);
 

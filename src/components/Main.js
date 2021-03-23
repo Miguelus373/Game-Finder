@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import Cookies from 'universal-cookie';
+import { loggedIn } from '../helpers/session';
 
 const MainPage = () => {
-  const cookies = new Cookies();
   const history = useHistory();
 
-  if (cookies.get('currentUserID')) { history.push('/menu'); }
+  if (loggedIn()) { history.push('/menu'); }
 
   return (
     <>
