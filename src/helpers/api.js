@@ -25,12 +25,12 @@ const gameInfo = async id => {
 
 const session = async (username, path) => {
   try {
-    const options = {
+    const OPTIONS = {
       method: 'POST',
       mode: 'cors',
     };
 
-    const response = await fetch(`${URL}${path}?username=${username}`, options);
+    const response = await fetch(`${URL}${path}?username=${username}`, OPTIONS);
 
     return response;
   } catch {
@@ -57,14 +57,17 @@ const user = async (id, token) => {
   }
 };
 
-const addToFavourites = async (userID, gameID) => {
+const addToFavourites = async (userID, gameID, token) => {
   try {
-    const options = {
+    const OPTIONS = {
       method: 'POST',
       mode: 'cors',
+      headers: {
+        Authorization: `Basic ${token}`,
+      },
     };
 
-    fetch(`${URL}/favourites?user_id=${userID}&game_id=${gameID}`, options);
+    fetch(`${URL}/favourites?user_id=${userID}&game_id=${gameID}`, OPTIONS);
 
     return true;
   } catch {
@@ -72,14 +75,17 @@ const addToFavourites = async (userID, gameID) => {
   }
 };
 
-const removeFromFavourites = async favID => {
+const removeFromFavourites = async (favID, token) => {
   try {
-    const options = {
+    const OPTIONS = {
       method: 'DELETE',
       mode: 'cors',
+      headers: {
+        Authorization: `Basic ${token}`,
+      },
     };
 
-    fetch(`${URL}/favourites/${favID}`, options);
+    fetch(`${URL}/favourites/${favID}`, OPTIONS);
     return true;
   } catch {
     return false;
