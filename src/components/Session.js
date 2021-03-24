@@ -3,6 +3,7 @@ import { useHistory, Link, useLocation } from 'react-router-dom';
 import Cookies from 'universal-cookie';
 import { session } from '../helpers/api';
 import { loggedIn } from '../helpers/session';
+import styles from '../assets/Session.module.css';
 
 const Session = () => {
   const cookies = new Cookies();
@@ -39,9 +40,16 @@ const Session = () => {
   }
 
   return (
-    <>
-      <h1>{tittle ?? 'Log In'}</h1>
-      <p>{errorMessage}</p>
+    <div className={styles.container}>
+      <h1 className={styles.title}>{tittle ?? 'Log In'}</h1>
+      <p className={styles.message}>
+        Welcome!
+        {' '}
+        {tittle ?? 'Log In'}
+        {' '}
+        and start managing your games
+      </p>
+      <p className={styles.error}>{errorMessage}</p>
       <form>
         <input
           type="text"
@@ -49,16 +57,19 @@ const Session = () => {
           value={username}
           onChange={e => setUsername(e.target.value)}
           placeholder="Enter your Username"
+          className={styles.input}
         />
+        <br />
         <button
           type="button"
           onClick={createSession}
+          className={styles.button}
         >
           {buttonTxt ?? 'Login'}
         </button>
       </form>
 
-      <p>
+      <p className={styles.redirect}>
         <span>
           {ask ?? 'Don\'t'}
           {' '}
@@ -69,7 +80,7 @@ const Session = () => {
           {redirect ?? 'Sign Up'}
         </Link>
       </p>
-    </>
+    </div>
   );
 };
 
