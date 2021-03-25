@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Game-Finder/static/css/main.23992013.chunk.css",
+    "main.js": "/Game-Finder/static/js/main.e932ec27.chunk.js",
+    "main.js.map": "/Game-Finder/static/js/main.e932ec27.chunk.js.map",
+    "runtime-main.js": "/Game-Finder/static/js/runtime-main.b0db0698.js",
+    "runtime-main.js.map": "/Game-Finder/static/js/runtime-main.b0db0698.js.map",
+    "static/js/2.3966b6e3.chunk.js": "/Game-Finder/static/js/2.3966b6e3.chunk.js",
+    "static/js/2.3966b6e3.chunk.js.map": "/Game-Finder/static/js/2.3966b6e3.chunk.js.map",
+    "index.html": "/Game-Finder/index.html",
+    "static/css/main.23992013.chunk.css.map": "/Game-Finder/static/css/main.23992013.chunk.css.map",
+    "static/js/2.3966b6e3.chunk.js.LICENSE.txt": "/Game-Finder/static/js/2.3966b6e3.chunk.js.LICENSE.txt",
+    "static/media/arrow.2087ad8b.svg": "/Game-Finder/static/media/arrow.2087ad8b.svg",
+    "static/media/heart.ae447f6c.svg": "/Game-Finder/static/media/heart.ae447f6c.svg",
+    "static/media/menu.35169075.svg": "/Game-Finder/static/media/menu.35169075.svg",
+    "static/media/profile_icon.b04388c7.png": "/Game-Finder/static/media/profile_icon.b04388c7.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b0db0698.js",
+    "static/js/2.3966b6e3.chunk.js",
+    "static/css/main.23992013.chunk.css",
+    "static/js/main.e932ec27.chunk.js"
+  ]
+}
