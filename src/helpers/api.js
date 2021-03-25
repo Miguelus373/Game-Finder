@@ -1,5 +1,4 @@
-// Development url
-const URL = 'http://127.0.0.1:3000';
+const URL = 'https://gamefinderapi.herokuapp.com/';
 
 const games = async () => {
   try {

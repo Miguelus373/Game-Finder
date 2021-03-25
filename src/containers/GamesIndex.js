@@ -14,9 +14,9 @@ const GamesIndex = () => {
   let games = useSelector(state => state.games);
   let title; let loading;
 
-  if (pathname === '/favourites') {
-    if (!loggedIn()) { history.push('/'); return false; }
+  if (!loggedIn()) { history.push('/'); return false; }
 
+  if (pathname === '/favourites') {
     title = 'Favourites';
     loading = 'No Games in favourites';
 

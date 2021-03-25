@@ -32,7 +32,7 @@
 .input {
   padding: 0.5rem 2rem;
   text-align: center;
-  border: 1px solid lightgray;
+  border: 2px solid lightgray;
   border-radius: 2rem;
   color: #000
 }
@@ -54,7 +54,12 @@
   font-size: small;
 }
 
-.input:focus {
+.button:hover {
+  cursor: pointer;
+}
+
+.input:focus,
+.button:focus {
   outline: none;
-  border: 1px solid orangered;
+  border-color: orangered;
 }
