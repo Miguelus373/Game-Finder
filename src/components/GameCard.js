@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import FavouriteButton from '../containers/FavouriteButton';
+import styles from '../assets/GameCard.module.css';
 
 const GameCard = ({ game }) => {
   const {
@@ -9,14 +10,16 @@ const GameCard = ({ game }) => {
   } = game;
 
   return (
-    <>
-      <Link to={`/game/${id}`}>
-        <h3>{title}</h3>
-        <img src={image} alt={title} />
-        <span>{genre}</span>
+    <div className={styles.card}>
+      <Link to={`/game/${id}`} className={styles.link}>
+        <img src={image} alt={title} className={styles.image} />
       </Link>
-      <FavouriteButton gameID={id} />
-    </>
+      <div className={styles.info}>
+        <h3 className={styles.title}>{title}</h3>
+        <p>{genre}</p>
+        <FavouriteButton gameID={id} />
+      </div>
+    </div>
   );
 };
 

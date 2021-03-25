@@ -1,0 +1,31 @@
+.card {
+  width: 100%;
+  margin: 2rem 0 2rem;
+  box-sizing: border-box;
+  box-shadow: 0 0 20px rgb(158, 158, 158);
+  background-color: #fff;
+};
+
+.link {
+  width: 100%;
+  height: auto;
+}
+
+.image {
+  width: 100%;
+  max-height: 22rem;
+}
+
+.info {
+  text-align: left;
+  padding: 2rem;
+  font-size: small;
+  font-weight: 300;
+  margin: -1rem 0;
+  position: relative;
+}
+
+.title {
+  color: black;
+  margin: 0;
+}
