@@ -3,6 +3,7 @@ import { useLocation, useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Navbar from '../components/Navbar';
 import { loggedIn } from '../helpers/session';
+import styles from '../assets/GameDetails.module.css';
 
 const GameDetails = () => {
   const history = useHistory();
@@ -17,12 +18,23 @@ const GameDetails = () => {
   } = game;
 
   return (
-    <>
+    <div className={styles.container}>
       <Navbar title={title} backArrow />
-      <img src={image} alt={title} />
-      <p>{description}</p>
-      <p>{genre}</p>
-    </>
+      <img src={image} alt={title} className={styles.image} />
+      <div className={styles.wrapper}>
+        <p className={styles.about}>
+          About this Game:
+        </p>
+        <br />
+        <p className={styles.description}>
+          {description}
+        </p>
+      </div>
+      <p className={styles.genre}>{genre}</p>
+      <p className={styles.button}>
+        Buy for $ 19.99
+      </p>
+    </div>
   );
 };
 
