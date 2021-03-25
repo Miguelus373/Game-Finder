@@ -1,0 +1,9 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 3.5rem 2rem;
+  background-color: rgb(237, 237, 237);
+  box-sizing: border-box;
+  min-height: 100vh;
+}

@@ -6,6 +6,7 @@ import * as API from '../helpers/api';
 import { setGames } from '../actions/index';
 import Navbar from '../components/Navbar';
 import { loggedIn } from '../helpers/session';
+import styles from '../assets/GameIndex.module.css';
 
 const GamesIndex = () => {
   const { pathname } = useLocation();
@@ -37,12 +38,14 @@ const GamesIndex = () => {
   return (
     <>
       <Navbar title={title ?? 'Games'} />
+      <div className={styles.container}>
 
-      {games.length === 0 && <p>{loading ?? 'Loading'}</p>}
+        {games.length === 0 && <p>{loading ?? 'Loading'}</p>}
 
-      {games.map(game => (
-        <GameCard game={game} key={game.id} />
-      ))}
+        {games.map(game => (
+          <GameCard game={game} key={game.id} />
+        ))}
+      </div>
     </>
   );
 };
