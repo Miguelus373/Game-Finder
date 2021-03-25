@@ -1,0 +1,41 @@
+.navbar {
+  padding: 1rem;
+  background-color: rgb(237, 237, 237);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1;
+}
+.back {
+  position: absolute;
+  left: 1.5rem;
+  top: calc(50% - 0.7rem);
+  border: none;
+  background-color: transparent;
+}
+
+.backArrow {
+  width: 1.2rem;
+
+}
+
+.title {
+  font-weight: 400;
+  font-size: medium;
+  margin: 0 auto;
+}
+
+.menu {
+  position: absolute;
+  right:  1.5rem;
+  font-size: 1rem;
+  top: calc(50% - 16px);
+  text-decoration: none;
+  color: rgb(134, 134, 134);
+}
+
+.back:hover {
+  cursor: pointer;
+  outline: none;
+}

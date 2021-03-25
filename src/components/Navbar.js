@@ -2,24 +2,27 @@ import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { loggedIn } from '../helpers/session';
+import styles from '../assets/Navbar.module.css';
+import Arrow from '../assets/images/arrow.svg';
+import Menu from '../assets/images/menu.svg';
 
 const Navbar = ({ title, backArrow }) => {
   const history = useHistory();
 
   return (
-    <nav>
+    <nav className={styles.navbar}>
       {backArrow
       && (
-      <button type="button" onClick={history.goBack}>
-        {'<'}
+      <button type="button" onClick={history.goBack} className={styles.back}>
+        <img src={Arrow} alt="Go back" className={styles.backArrow} />
       </button>
       )}
-      <h3>
+      <h4 className={styles.title}>
         {title}
-      </h3>
+      </h4>
       {loggedIn() && (
-      <Link to="/menu">
-        Menu
+      <Link to="/menu" className={styles.menu}>
+        <img src={Menu} alt="Menu" />
       </Link>
       )}
       {!loggedIn() && (
