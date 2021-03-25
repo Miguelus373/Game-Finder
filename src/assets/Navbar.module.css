@@ -7,6 +7,7 @@
   box-sizing: border-box;
   z-index: 1;
 }
+
 .back {
   position: absolute;
   left: 1.5rem;
@@ -17,7 +18,6 @@
 
 .backArrow {
   width: 1.2rem;
-
 }
 
 .title {
@@ -28,7 +28,7 @@
 
 .menu {
   position: absolute;
-  right:  1.5rem;
+  right: 1.5rem;
   font-size: 1rem;
   top: calc(50% - 16px);
   text-decoration: none;

@@ -4,9 +4,9 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  background-image: 
-  linear-gradient(rgba(255, 255, 255, 0.459), rgba(255, 255, 255, 0.52)), 
-  url(https://www.teahub.io/photos/full/197-1973124_need-for-speed-phone.jpg);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.459), rgba(255, 255, 255, 0.52)),
+    url(https://www.teahub.io/photos/full/197-1973124_need-for-speed-phone.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -42,5 +42,6 @@
 .button:hover {
   box-shadow: 0 0 15px white;
   background-color: rgb(251, 89, 30);
+
   /* background-color: rgb(255, 123, 0); */
 }
