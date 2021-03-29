@@ -24,9 +24,9 @@
 
 > Check this app online on its [Live demo](https://gamefinderapp.herokuapp.com/)
 
-## How to Install
+## Installation
 
-> You can have a local copy of this project by following these simple steps:
+> You could have a local copy of this project by following these simple steps:
 
 - Install Node in your system. To install Node, you can read the [Documentation](https://nodejs.org/en/download/package-manager/)
 - Clone the repo or download the zip file into your machine. 
@@ -44,6 +44,18 @@
    npm start
     ``` 
 - This will start a local server that you can access with [This Link](http://localhost:8000/) on your browser
+
+## Testings
+
+> This project has unit tests for most of the logic. Follow these steps to run them:
+
+- First you will need a local copy of this project (folow the [Installation](##installation) section).
+
+- Once you have this project up and runnig, CD into the Game-Finder folder and run
+    ``` 
+   npm run test
+    ``` 
+- This will run all tests and show you the results
 
 ---
 
