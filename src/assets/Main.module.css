@@ -1,0 +1,47 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.459), rgba(255, 255, 255, 0.52)),
+    url(https://www.teahub.io/photos/full/197-1973124_need-for-speed-phone.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgb(194, 194, 194);
+}
+
+.title {
+  font-weight: 400;
+  font-size: 2rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-shadow: 0 0 20px #000;
+  color: white;
+}
+
+.wrapper {
+  padding: 2rem;
+  width: 45%;
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  font-size: small;
+  background-color: orangered;
+  padding: 0.5rem 0;
+  text-decoration: none;
+  color: #fff;
+  margin: 1rem 0;
+  border-radius: 2rem;
+}
+
+.button:hover {
+  box-shadow: 0 0 15px white;
+  background-color: rgb(251, 89, 30);
+
+  /* background-color: rgb(255, 123, 0); */
+}

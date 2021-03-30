@@ -1,0 +1,16 @@
+.button {
+  border: none;
+  outline: none;
+  position: absolute;
+  right: 1.8rem;
+  top: 3.5rem;
+  background-color: transparent;
+}
+
+.fav {
+  fill: orangered;
+}
+
+.noFav {
+  fill: lightgrey;
+}
